@@ -9,7 +9,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
-    {
+    {       
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -41,6 +41,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private Rigidbody rb;
+        private bool playerLocked;
 
         // Use this for initialization
         private void Start()
@@ -55,12 +57,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            rb = GetComponent<Rigidbody>();
+            playerLocked = false;
         }
 
 
         // Update is called once per frame
         private void Update()
         {
+            if (playerLocked == true)
+            {
+                return;
+            }
+
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -94,6 +104,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
+            if (playerLocked == true)
+            {
+                return;
+            }
+
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
@@ -254,6 +269,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        public void LockPlayer(bool locked)
+        {
+            if (locked == true)
+            {
+                playerLocked = true;
+                rb.constraints = RigidbodyConstraints.FreezeAll;
+            }
+            else
+            {
+                playerLocked = false;
+                rb.constraints = RigidbodyConstraints.None;
+            }
         }
     }
 }

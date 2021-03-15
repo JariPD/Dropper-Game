@@ -7,6 +7,16 @@ public class Collision : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
    
+    public void TPPlayerToSpawn()
+    {
+        transform.position = new Vector3(0, 10, 5);
+
+        rb.velocity = Vector3.zero;
+
+        Physics.SyncTransforms();
+    }
+
+
     private void OnControllerColliderHit(ControllerColliderHit collision)
     {
         //print("beep");
@@ -42,5 +52,5 @@ public class Collision : MonoBehaviour
 
             Physics.SyncTransforms();
         }
-    }     
+    }  
 }

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Respawn : MonoBehaviour
+public class Border : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
 
     void Update()
     {
-        /*if (transform.position.x < -50)
+        if (transform.position.x < -50)
         {
             transform.position = new Vector3(0f, 5, 0f);
 
@@ -17,7 +17,7 @@ public class Respawn : MonoBehaviour
             Physics.SyncTransforms();
         }
 
-        if (transform.position.x < 50)
+        if (transform.position.x > 50)
         {
             transform.position = new Vector3(0f, 5, 0f);
 
@@ -26,13 +26,13 @@ public class Respawn : MonoBehaviour
             Physics.SyncTransforms();
         }
 
-        if (transform.position.y < 50)
+        if (transform.position.y > 50)
         {
             transform.position = new Vector3(0f, 5, 0f);
 
             rb.velocity = Vector3.zero;
 
             Physics.SyncTransforms();
-        }*/
+        }
     } 
 }
