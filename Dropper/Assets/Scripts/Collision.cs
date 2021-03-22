@@ -34,7 +34,7 @@ public class Collision : MonoBehaviour
         {
             print("collision detected 2");
 
-            transform.position = new Vector3(0, 10, 5);
+            transform.position = new Vector3(133, 1005, 61);
 
             rb.velocity = Vector3.zero;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonPress : MonoBehaviour
+public class ButtonLevelTwo : MonoBehaviour
 {
     private float timePassed;
     private float lerpDuration = 0.5f;
@@ -30,7 +30,7 @@ public class ButtonPress : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene("NielsLevel2");
+        SceneManager.LoadScene("NielsLevel3");
 
         while (t > 0)
         {
