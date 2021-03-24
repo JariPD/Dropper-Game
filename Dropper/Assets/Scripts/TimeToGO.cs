@@ -14,8 +14,9 @@ public class TimeToGO : MonoBehaviour
     [SerializeField] private GameObject pickUpText;
 
     private Collision col;
+    private TimerTrigger timerTrigger;
 
-    float timeLeft = 45.0f;
+    float timeLeft = 999.0f;
 
     private FirstPersonController FPC;
 
@@ -23,14 +24,20 @@ public class TimeToGO : MonoBehaviour
     {
         FPC = FindObjectOfType<FirstPersonController>();
         col = FindObjectOfType<Collision>();
+        timerTrigger = FindObjectOfType<TimerTrigger>();
     }
 
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        timeField.text = "Time Left: " + Mathf.Round(timeLeft);
+        if (timerTrigger.timerState == true)
+        {
+            //starts the timer if the condition is met
+            timeLeft -= Time.deltaTime;
+            timeField.text = "Time Left: " + Mathf.Round(timeLeft);
+        }
         if (timeLeft < 0)
-        {                       
+        {   
+            //does everything needed when you die
             FPC.LockPlayer(true);
 
             goText.SetActive(true);
@@ -50,7 +57,6 @@ public class TimeToGO : MonoBehaviour
 
             timeLeft = 45f;
             timeText.SetActive(true);
-
 
             SceneManager.LoadScene("Niels");
             
