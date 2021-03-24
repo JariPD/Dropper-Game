@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Niels.unity
     guid: d92c36e82da078544b633e076722cef6
+  - enabled: 1
+    path: Assets/NielsLevel2.unity
+    guid: 76f92b41bc91f8d40b04024b1e653982
+  - enabled: 1
+    path: Assets/NielsLevel3.unity
+    guid: be5bde71e903479478c9682fe977cc77
   m_configObjects: {}
