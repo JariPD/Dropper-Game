@@ -69603,9 +69603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cad18bf47f347f49b7784aef419e20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bridge: {fileID: 0}
-  brokenBridge: {fileID: 0}
-  bridgeAudio: {fileID: 0}
 --- !u!1 &1369702194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 189478, guid: 21fe361e82c08e54b8a267303d3f0fc5,
@@ -91216,7 +91213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763802970}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 540, y: 779, z: -249.1}
+  m_LocalPosition: {x: 534, y: 776, z: -249.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1770759536}
@@ -91237,16 +91234,18 @@ TextMesh:
     Jump down without touching any
     of the obstacles
 
-    If you make it down youu need to find and press button
+    If you make it down you need to find and press the button
     to bring you to the next level.
 
     if you see this powerup        make sure
-    to grab it to fall slower for 3 seconds
+    to grab it to fall slower for 3 seconds.
 
     but make sure to do it quick because
     if the timer runs out...
 
     YOU RESTART
+
+    
 
     
 
@@ -91259,7 +91258,7 @@ TextMesh:
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 220
+  m_FontSize: 210
   m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
